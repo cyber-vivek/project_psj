@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'psj/css/resultpage.css' %}">
+    <title>{{ q }} - PSJ Search</title>
+</head>
+<body>
+
+<div class="container">
+    <h6>Showing results for "{{ q }}"</h6>
+    <!-- <div class="card">
+        <h2 class="name">{{a.doc_name}}</h2>
+        <p>Weight : {{a.weight}}</p>
+<a class="button-15"  href="{% static a.href %}" target="_blank">See Doc</a>
+    </div> -->
+
+    {% load static %}
+    {% for a in results %}
+    <div class="card">
+        <h2 class="name">{{a.doc_name}}</h2>
+        <p>Weight : {{a.weight}}</p>
+        <a class="button-15"  href="{% static a.href %}" target="_blank">See Doc</a>
+    </div>
+    {% endfor %}
+    </div>
+</body>
+</html>
